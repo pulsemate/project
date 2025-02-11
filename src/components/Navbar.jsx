@@ -1,4 +1,4 @@
-function Navbar() {
+function Navbar({islogin}) {
     return (
 
         <nav className="fixed top-0 z-50 w-screen font-[Poppins] bg-[#F4FEFF] shadow-md">
@@ -15,7 +15,7 @@ function Navbar() {
                     <li><a href="#" className="hover:text-blue-600 transition">About us</a></li>
                     <li>
                         <a href="#" className="hover:text-blue-600 transition">
-                            Register/Login
+                        {islogin ?  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg> : <h1>Register / Login</h1>}
                         </a>
                     </li>
                 </ul>

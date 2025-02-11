@@ -23,7 +23,7 @@ function Card1({ title, description, text }) {
 function Home() {
   return (
     <div className="flex-col">
-      <Navbar />
+      <Navbar islogin={false} />
       <section
         id="home"
         className="flex w-full h-[857px] py-[212px] bg-(--bg-light-blue) items-center justify-center"
@@ -170,16 +170,17 @@ function Home() {
           </div>
         </div>
       </section>
-      <section>
-        <div className="bg-blue-200"
-
-        >
-          <div className="flex justify-center">
-            <div>
-              <h1>Ready to get started?</h1>
-              <button>Register/Login</button>
-              <img src="src/assets/Pulsematelogo.png" alt="" />
-              <h1>© 2025 PulseMate Prototype. </h1>
+      <section className="pt-[30px]">
+        <div className="h-auto bg-linear-to-r from-blue-100 to-blue-200 py-[30px] font-[poppins]">
+          <div className="flex justify-center items-center">
+            <div className="flex flex-col justify-center items-center">
+              <h1 className=" text-[60px]">Ready to get started?</h1>
+              <a href="" className="flex justify-center py-4">
+                <span className="text-[14px] inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Register / Login</span>
+              </a>
+              <img src="src/assets/Pulsematelogo.png" alt="pulsematelogo"  className="object-center"/>
+              <h1 className="">© 2025 PulseMate Prototype. </h1>
             </div>
             <img
               src="src/assets/rayong.png"
