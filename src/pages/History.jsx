@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-function Dashboard(){
-
+function History(){
 
     return(
         <div className="h-full">
@@ -14,7 +13,7 @@ function Dashboard(){
                 {/* main content */}
                 <div className="font-[sarabun] px-[59px] pt-4 space-y-[28px] " id="Userdata">
                     <div>
-                        <h1>Dashboard</h1>
+                        <h1>History</h1>
                     </div>
                 </div>
 
@@ -22,5 +21,6 @@ function Dashboard(){
 
         </div>
     );
+
 }
-export default Dashboard;
+export default History;

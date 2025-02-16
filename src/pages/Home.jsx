@@ -1,5 +1,7 @@
 import Navbar from "../components/Navbar";
 import Card from "../components/card";
+import { useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Card1({ title, description, text }) {
   return (
@@ -21,12 +23,26 @@ function Card1({ title, description, text }) {
 }
 
 function Home() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const section = document.getElementById(location.hash.substring(1));
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth" });
+        }, 100); // Small delay to ensure rendering
+      }
+    }
+  }, [location]);
+
   return (
     <div className="flex-col">
       <Navbar islogin={false} />
       <section
         id="home"
-        className="flex w-full h-[857px] py-[212px] bg-(--bg-light-blue) items-center justify-center"
+        className="flex w-full h-[657px] py-[212px] bg-(--bg-light-blue) items-center justify-center"
       >
         <div className="h-fit">
           <img src="src/assets/sinocarebpm.png" width={370} height={549} />
@@ -46,16 +62,16 @@ function Home() {
             วินิจฉัยโรคได้แม่นยำมากยิ่งขึ้น
           </p>
           <div className="flex justify-center drop-shadow-sm rounded-full w-[239px] bg-[linear-gradient(-80deg,#007299,#56E0E0)] px-[18px] py-[13px]">
-            <p className="text-[20px] text-[#F4FEFF] font-semibold">
+            <NavLink to="/Dashboard" className="text-[20px] text-[#F4FEFF] font-semibold">
               Get Started
-            </p>
+            </NavLink>
           </div>
         </div>
       </section>{" "}
       {/* Home */}
       <section
         id="our-values"
-        className="flex flex-col w-full h-[857px] items-center justify-items-center gap-[100px] items-center justify-center"
+        className="flex flex-col w-full h-[857px] justify-items-center gap-[100px] items-center justify-center"
       >
         <div className="font-normal text-[64px] font-[Amaranth] text-(--our-values)">
           Our Values
@@ -115,9 +131,10 @@ function Home() {
         </div>
       </section>{" "}
       {/* Services */}
-      <section id="about-us" className="h-[768px]">
+      <div id="aboutus"></div>
+      <section id="about-us" className="h-[868px] pt-20">
         <div className="font-[Amaranth] flex flex-col text-center text-(--our-values)">
-          <h1 className="text-[64px]">About us</h1>
+          <h1 className="text-[64px] pt-4" id="abouthead">About us</h1>
           <h4 className="text-[26px] py-[30px]">
             Welcome to Pulsemate, Your Personalized Health Mate.
           </h4>
@@ -138,7 +155,7 @@ function Home() {
           </h1>
         </div>
       </section>
-      <section id="our-members">
+      {/* <section id="our-members">
         <div className="font-[Amaranth] flex flex-col text-center text-(--our-values)">
           <h1 className="text-[64px] py-[30px]">Our member</h1>
         </div>
@@ -169,17 +186,17 @@ function Home() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="pt-[30px]">
         <div className="h-auto bg-linear-to-r from-blue-100 to-blue-200 py-[30px] font-[poppins]">
           <div className="flex justify-center items-center">
             <div className="flex flex-col justify-center items-center">
               <h1 className=" text-[60px]">Ready to get started?</h1>
-              <a href="" className="flex justify-center py-4">
+              <NavLink to="/Login" className="flex justify-center py-4">
                 <span className="text-[14px] inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                   Register / Login</span>
-              </a>
-              <img src="src/assets/Pulsematelogo.png" alt="pulsematelogo"  className="object-center"/>
+              </NavLink>
+              <img src="src/assets/Pulsematelogo.png" alt="pulsematelogo" className="object-center" />
               <h1 className="">© 2025 PulseMate Prototype. </h1>
             </div>
             <img
