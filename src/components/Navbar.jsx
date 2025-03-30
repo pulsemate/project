@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 function Navbar({islogin}) {
     return (
 
-        <nav className="sticky top-0 z-50 w-full font-[Poppins] bg-[#F4FEFF] shadow-md">
+        <nav className="sticky top-0 z-50 font-[Poppins] bg-[#F4FEFF] shadow-md">
             <div className="flex flex-row gap-4 justify-between px-[80px] py-[16px]">
                 {/* Logo */}
                 <div className="">
